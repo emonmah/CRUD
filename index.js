@@ -2,7 +2,8 @@ const express = require('express');
 const mySqlPool = require('./config/db');
 const app = express();
 const port = 5001;
-
+//middleware to parse JSON request bodies
+app.use(express.json());
 app.use('/api/v1/student', require('./routes/students-Routes'));
 
 app.get('/test',(req, res)=>{
